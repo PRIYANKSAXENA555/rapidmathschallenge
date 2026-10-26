@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Math Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- SETTINGS SCREEN -->
+  <div id="settings-screen">
+    <h1>Math Challenge</h1>
+
+    <div class="section-title">Time</div>
+    <div class="time-group">
+      <button class="time-btn selected" data-time="60">1 min</button>
+      <button class="time-btn" data-time="120">2 min</button>
+    </div>
+
+    <div class="section-title">Operation &amp; Digits</div>
+    
+    <!-- Addition Row -->
+    <div class="op-row">
+      <div class="op-name">Addition</div>
+      <div class="op-selects">
+        <select class="op-digits" data-op="add" data-pos="1">
+          <option value="1">1 digit</option>
+          <option value="2">2 digit</option>
+        </select>
+        <div class="op-symbol">+</div>
+        <select class="op-digits" data-op="add" data-pos="2">
+          <option value="1">1 digit</option>
+          <option value="2">2 digit</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Subtraction Row -->
+    <div class="op-row">
+      <div class="op-name">Subtraction</div>
+      <div class="op-selects">
+        <select class="op-digits" data-op="sub" data-pos="1">
+          <option value="1">1 digit</option>
+          <option value="2">2 digit</option>
+        </select>
+        <div class="op-symbol">&minus;</div>
+        <select class="op-digits" data-op="sub" data-pos="2">
+          <option value="1">1 digit</option>
+          <option value="2">2 digit</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Multiplication Row -->
+    <div class="op-row">
+      <div class="op-name">Multiplication</div>
+      <div class="op-selects">
+        <select class="op-digits" data-op="mul" data-pos="1">
+          <option value="1">1 digit</option>
+          <option value="2">2 digit</option>
+        </select>
+        <div class="op-symbol">&times;</div>
+        <select class="op-digits" data-op="mul" data-pos="2">
+          <option value="1">1 digit</option>
+          <option value="2">2 digit</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Division Row -->
+    <div class="op-row">
+      <div class="op-name">Division</div>
+      <div class="op-selects">
+        <select class="op-digits" data-op="div" data-pos="1">
+          <option value="1">1 digit</option>
+          <option value="2">2 digit</option>
+        </select>
+        <div class="op-symbol">&divide;</div>
+        <select class="op-digits" data-op="div" data-pos="2">
+          <option value="1">1 digit</option>
+          <option value="2">2 digit</option>
+        </select>
+      </div>
+    </div>
+
+    <button id="start-btn">Start Test</button>
+  </div>
+
+  <!-- TEST SCREEN -->
+  <div id="test-screen" style="display:none;">
+    <div class="status-bar">
+      <span>&#9201; <span id="timer">60</span>s</span>
+      <span>&#9989; <span id="counter">0</span></span>
+    </div>
+    <h1 id="question">--</h1>
+    <input id="answer" type="number" inputmode="numeric" autocomplete="off">
+  </div>
+
+  <!-- RESULT SCREEN -->
+  <div id="result-screen" style="display:none; text-align:center;">
+    <h1>Time's Up!</h1>
+    <p style="font-size:22px;">You got <b id="final-score">0</b> correct &#127881;</p>
+    
+    <!-- SHARE BUTTON -->
+    <button id="share-btn" style="display:none; padding:12px 30px; font-size:18px; 
+      border-radius:10px; border:none; background:#25D366; color:#fff; 
+      cursor:pointer; margin-top: 10px; margin-bottom: 10px;">
+      &#128279; Share Score
+    </button>
+    
+    <br>
+    <button id="restart-btn" style="padding:12px 30px;font-size:18px;
+      border-radius:10px;border:none;background:#2196F3;color:#fff;cursor:pointer;">
+      Try Again
+    </button>
+    
+    <p id="challenge-msg" style="display:none; margin-top:20px; font-weight: bold; color: #4CAF50;">
+      &#127942; You unlocked the Challenge a Friend button!
+    </p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
