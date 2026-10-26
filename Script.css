@@ -1,0 +1,138 @@
+css = """
+body {
+  font-family: system-ui, Arial, sans-serif;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 0 20px;
+  background: #f7f9fc;
+  color: #222;
+}
+h1, h2 { text-align: center; }
+
+.section-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+/* Time Buttons */
+.time-group {
+  display: flex;
+  gap: 10px;
+}
+.time-group button {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+}
+.time-group button.selected {
+  background: #4CAF50;
+  border-color: #2e7d32;
+  color: white;
+}
+
+/* Operation Rows */
+.op-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.op-name {
+  font-size: 16px;
+  font-weight: 600;
+  width: 110px;
+}
+.op-selects {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.op-selects select {
+  padding: 6px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+  background: #f9f9f9;
+}
+.op-symbol {
+  font-size: 20px;
+  font-weight: bold;
+  color: #555;
+  width: 30px;
+  text-align: center;
+}
+
+#start-btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  margin-top: 20px;
+  font-size: 18px;
+  background: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+#start-btn:hover { background: #1976D2; }
+
+/* Test Screen */
+#test-screen { text-align: center; padding-top: 20px; }
+#question {
+  font-size: 48px;
+  margin: 24px 0;
+  letter-spacing: 2px;
+}
+#answer {
+  font-size: 32px;
+  width: 180px;
+  padding: 10px;
+  text-align: center;
+  border: 3px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+#answer.correct {
+  border-color: #4CAF50;
+  color: #4CAF50;
+}
+#answer.wrong {
+  border-color: red;
+  color: red;
+  animation: shake 0.2s;
+}
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+.status-bar {
+  display: flex;
+  justify-content: space-around;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+"""
+
+with open(os.path.join(PROJECT_DIR, "style.css"), "w", encoding="utf-8") as f:
+    f.write(css)
+print("style.css written OK")
